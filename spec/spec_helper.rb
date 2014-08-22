@@ -87,4 +87,6 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
+  require 'factory_girl_rails'
+
 end
