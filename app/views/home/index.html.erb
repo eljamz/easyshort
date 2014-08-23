@@ -21,7 +21,7 @@
 
  	<div class="row">
         <div class="col-lg-12">
-          <table id="top_urls" class="table table-bordered">
+          <table id="links" class="table table-bordered">
             <thead>
               <tr>
                 <th width="20">#</th>
@@ -39,7 +39,7 @@
                 <td><%= link.display_slug %></td>
                 <td><%= truncate(link.given_url, length: 60) %></td>
                 <td align="center"><span class="badge"><%= link.clicks %></span></td>
-                <td align="center"><button type="button" class="btn btn-xs btn-success">copy</button></td>
+                <td align="center"><button type="button" class="btn btn-xs btn-success" title='Copy to Clipboard'>copy</button></td>
               </tr>
              <% top = top + 1 %>
             <% end %>

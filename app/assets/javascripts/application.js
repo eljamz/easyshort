@@ -4,7 +4,7 @@
 //= require jquery_ujs
 //= require jquery.validate
 //= require jquery.validate.additional-methods
-//= require jquery.clipboard
+//= require ZeroClipboard
 
 $.validator.addMethod(
         "regex",
@@ -35,3 +35,30 @@ $('#new_link').ready(function() {
 setTimeout(function() {
     $('.alert').fadeOut('fast');
 }, 5000);
+
+// ZeroClipboard
+ZeroClipboard.moviePath = '/assets/ZeroClipboard.swf';
+
+$(function() {
+    $("#links tbody td:last-child").each(function() {
+        //Create a new clipboard client
+        var clip = new ZeroClipboard.Client();
+
+        //Cache the last td and the parent row    
+        var lastTd = $(this);
+        var parentRow = lastTd.parent("tr");
+
+        //Glue the clipboard client to the last td in each row
+        clip.glue(lastTd[0]);
+
+        //Grab the text from the parent row of the icon
+        var txt = $.trim($("td:nth-child(2)", parentRow).text());
+        clip.setText(txt);
+
+        //Debug
+        //Add a complete event to let the user know the text was copied
+        // clip.addEventListener('complete', function(client, text) {
+        //    alert("Copied text to clipboard:\n" + text);
+        //});
+    });
+});
