@@ -35,3 +35,9 @@ gem "cucumber-rails", ">= 1.3.0", :group => :test, :require => false
 gem "launchy", ">= 2.1.2", :group => :test
 gem "factory_girl_rails", :group => [:development, :test], :require => false
 gem "devise", ">= 2.1.2"
+gem "figaro"
+gem "imgkit"
+gem "carrierwave"
+gem "fog", "~> 1.3.1"
+gem "mechanize"
+gem "sidekiq"
