@@ -1,27 +1,6 @@
-<!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
-	<h1>- easyshort -</h1>
-	<p>Welcome to - easyshort -, yet another URL shortener developed in Ruby on Rails 4, type your URL, select private or public click in "Shorten Me" and you're DONE!</p>
-
-	<p>
-	<% unless user_signed_in? %>
-		<%= link_to('Sign up!', new_user_registration_path, :class=>"btn btn-primary btn-lg") %> or try it as guest.
-	<% else %>
-		Remember to choose between public or private in your URL's
-	<% end %>
-	</p>
-</div>
-
-<%= render 'shared/new_link' %>
-
-
-<div class="page-header">
-	<h2><span class="label label-default">Top shortened URL's</span></h2>
-</div>
-
- 	<div class="row">
+    <div class="row">
         <div class="col-lg-12">
-          <table id="top_urls" class="table table-bordered">
+          <table class="table table-bordered">
             <thead>
               <tr>
                 <th width="20">#</th>
@@ -32,8 +11,12 @@
               </tr>
             </thead>
             <tbody>
+            <% current_page = params[:page].to_i %>
             <% top = 1 %>
-            <% @top_links.each do |link| %>          
+            <% if current_page > 1 %>
+              <% top = current_page * 20 - 20 %>
+            <% end %>
+            <% @links.each do |link| %>          
               <tr>
                 <td><%= top %></td>
                 <td><%= link.display_slug %></td>
@@ -46,4 +29,4 @@
             </tbody>
           </table>
         </div>
-   	</div>
+    </div>

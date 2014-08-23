@@ -5,4 +5,9 @@ Rails.application.routes.draw do
   resources :users
   resources :links
 
+  get '/all' => 'home#all'
+  get '/mylinks' => 'users#mylinks'
+  get ':slug' => 'links#show'
+  
+
 end

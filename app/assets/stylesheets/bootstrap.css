@@ -5984,6 +5984,9 @@ button.close {
   margin-right: auto;
   margin-left: auto;
 }
+.center-size-fix {
+  width: 80%;
+}
 .pull-right {
   float: right !important;
 }

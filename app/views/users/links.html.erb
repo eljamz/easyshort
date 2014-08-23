@@ -1,0 +1,28 @@
+    <div class="row">
+        <div class="col-lg-12">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th width="20">#</th>
+                <th>Shorten Url</th>
+                <th>Original URL</th>
+                <th width="50">Clicks</th>
+                <th width="50">Copy</th>
+              </tr>
+            </thead>
+            <tbody>
+            <% top = 1 %>
+            <% @links.each do |link| %>          
+              <tr>
+                <td><%= top %></td>
+                <td><%= link.display_slug %></td>
+                <td><%= truncate(link.given_url, length: 60) %></td>
+                <td align="center"><span class="badge"><%= link.clicks %></span></td>
+                <td align="center"><button type="button" class="btn btn-xs btn-success">copy</button></td>
+              </tr>
+             <% top = top + 1 %>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+   	</div>

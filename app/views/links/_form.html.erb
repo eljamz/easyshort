@@ -1,37 +1,27 @@
-<%= form_for(@link) do |f| %>
+<%= form_for(@link, remote: true) do |f| %>
   <% if @link.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@link.errors.count, "error") %> prohibited this link from being saved:</h2>
 
       <ul>
-      <% @link.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <% @link.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :given_url %><br>
-    <%= f.text_field :given_url %>
-  </div>
-  <div class="field">
-    <%= f.label :slug %><br>
-    <%= f.text_field :slug %>
-  </div>
-  <div class="field">
-    <%= f.label :clicks %><br>
-    <%= f.number_field :clicks %>
-  </div>
-  <div class="field">
-    <%= f.label :snapshot %><br>
-    <%= f.text_field :snapshot %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="center-size-fix center-block">
+    
+      <div class="field pull-left center-size-fix">
+        <% if user_signed_in? %>
+          <%= f.hidden_field :user_id, :value => current_user.id.to_s %>
+        <% end %>
+        <%= f.text_field :given_url, :class => "form-control", :placeholder => "Paste a link to shorten" %>
+      </div>
+      <div class="actions pull-left">
+        <%= f.submit 'Shorten Me', :class => "btn btn-primary" %>
+      </div>
+    
   </div>
 <% end %>
