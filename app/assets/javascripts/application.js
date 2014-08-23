@@ -30,3 +30,8 @@ $('#new_link').ready(function() {
     }
   });
 });
+
+// fade out notices
+setTimeout(function() {
+    $('.alert').fadeOut('fast');
+}, 5000);
