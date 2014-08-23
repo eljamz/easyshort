@@ -16,7 +16,7 @@
 
 
 <div class="page-header">
-	<h2><span class="label label-default">Top shortened URL's</span></h2>
+	<h2><span class="label label-default pull-left">Top shortened URL's</span><a href="/all"><button type="button" class="btn btn-sm btn-info pull-right">View all URL's</button></a></h2><div class="clear"></div>
 </div>
 
  	<div class="row">
@@ -39,7 +39,7 @@
                 <td><%= link.display_slug %></td>
                 <td><%= truncate(link.given_url, length: 60) %></td>
                 <td align="center"><span class="badge"><%= link.clicks %></span></td>
-                <td align="center"><button type="button" class="btn btn-xs btn-success" title='Copy to Clipboard'>copy</button></td>
+                <td align="center"><button type="button" class="btn btn-xs btn-success clickTip" title='Copy to Clipboard'>copy</button></td>
               </tr>
              <% top = top + 1 %>
             <% end %>

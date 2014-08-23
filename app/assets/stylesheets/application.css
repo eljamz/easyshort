@@ -3,3 +3,9 @@
  *= require bootstrap
  *= require bootstrap-custom-theme
  */
+ .clear {
+ 	clear: both;
+ }
+ .shorten-size-fix {
+ 	width: 88%;
+ }

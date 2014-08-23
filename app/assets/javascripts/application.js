@@ -6,6 +6,7 @@
 //= require jquery.validate.additional-methods
 //= require ZeroClipboard
 
+
 $.validator.addMethod(
         "regex",
         function(value, element, regexp) {
@@ -57,8 +58,8 @@ $(function() {
 
         //Debug
         //Add a complete event to let the user know the text was copied
-        // clip.addEventListener('complete', function(client, text) {
-        //    alert("Copied text to clipboard:\n" + text);
+        //clip.addEventListener('complete', function(client, text) {
+        //   alert("Copied text to clipboard:\n" + text);           
         //});
     });
 });

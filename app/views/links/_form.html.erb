@@ -13,13 +13,13 @@
 
   <div class="center-size-fix center-block">
     
-      <div class="field pull-left center-size-fix">
+      <div class="field pull-left shorten-size-fix">
         <% if user_signed_in? %>
           <%= f.hidden_field :user_id, :value => current_user.id.to_s %>
         <% end %>
         <%= f.text_field :given_url, :class => "form-control", :placeholder => "Paste a link to shorten" %>
       </div>
-      <div class="actions pull-left">
+      <div class="actions pull-right">
         <%= f.submit 'Shorten Me', :class => "btn btn-primary" %>
       </div>
     
