@@ -1,6 +1,6 @@
 == - easyshort -
 
-- easyshort - The easy way to short your URL's.
+easyshort - The easy way to short your URL's.
 
 It has been developed with:
 
