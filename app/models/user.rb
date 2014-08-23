@@ -27,10 +27,11 @@ class User
   field :last_sign_in_ip,    type: String
 
   ## Add Name for User
-  field :name
-  validates_presence_of :name
+  field :fullname,               type: String, default: ""
+  
 
   ## Some validations and protection
+  validates_presence_of :fullname
   validates_uniqueness_of :email, :case_sensitive => false
 
   ## Confirmable

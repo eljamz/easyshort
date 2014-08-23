@@ -1,4 +1,13 @@
-<h3>Home</h3>
-<% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
-<% end %>
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+	<h1>- easyshort -</h1>
+	<p>Welcome to - easyshort -, yet another URL shortener developed in Ruby on Rails 4, type your URL, select private or public click in short and you're DONE!</p>
+
+	<p>
+	<% unless user_signed_in? %>
+		<%= link_to('Sign up!', new_user_registration_path, :class=>"btn btn-primary btn-lg") %> or try it as guest.
+	<% else %>
+		Remember to choose between public or private in your URL's
+	<% end %>
+	</p>
+</div>
