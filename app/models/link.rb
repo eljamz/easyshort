@@ -14,7 +14,7 @@ class Link
   # Actions
   after_create :generate_slug
 
-  # Create constant. Advaice thanks to "Milan Dobrota ‏@milandobrota"
+  # Create constant. Advice thanks to "Milan Dobrota ‏@milandobrota"
   ALPHANUMERIC_VALUE = [('a'..'z'), ('A'..'Z'), ('0'..'9')].map { |i| i.to_a }.flatten
 
 
