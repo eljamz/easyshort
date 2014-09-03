@@ -1,2 +1,2 @@
-$('.result').append('<div class="center-size-fix center-block"><p class="short_url center-block">Your Shortened URL: <%= @link.display_slug %></p></div>')
+$('.result').append('<div class="center-size-fix center-block"><p class="short_url center-block">Your Shortened URL: <strong><%= @link.display_slug %></strong> click on the new copy button in the table!</p></div>').fadeOut(10000)
 $("#links > thead").append('<tr><td>new</td><td><%= @link.display_slug %></td><td><%= truncate(@link.given_url, length: 60) %></td><td align="center"><span class="badge"><%= @link.clicks %></span></td><td align="center"><button type="button" class="btn btn-xs btn-success">copy</button></td></tr>')

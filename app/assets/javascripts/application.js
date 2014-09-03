@@ -35,7 +35,7 @@ $('#new_link').ready(function() {
 // fade out notices
 setTimeout(function() {
     $('.alert').fadeOut('fast');
-}, 5000);
+}, 9000);
 
 // ZeroClipboard
 ZeroClipboard.moviePath = '/assets/ZeroClipboard.swf';

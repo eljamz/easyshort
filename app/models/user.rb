@@ -9,12 +9,12 @@ class User
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  
 
-  # include ZeroOidFix 
+
+  # include ZeroOidFix
   include ZeroOidFix
 
-  
+
 
   ## Database authenticatable
   field :email,              type: String, default: ""
@@ -36,7 +36,7 @@ class User
 
   ## Add Name for User
   field :fullname,               type: String, default: ""
-  
+
 
   ## Some validations and protection
   validates_presence_of :fullname
