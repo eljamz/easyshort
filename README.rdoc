@@ -18,7 +18,7 @@ Feel free to copy it and modify. Just clone the reposiroty and:
 
 * rake db:seed
 
-And it will fill you database with 2 example users:
+And it will fill you database with 2 example users: (easyshort.com does't exists)
 
 * admin@easyshort.com // please2014
 
